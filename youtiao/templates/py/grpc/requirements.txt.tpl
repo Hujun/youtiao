@@ -1,0 +1,15 @@
+raven>=6.2.1
+PyYAML>=3.12
+SQLAlchemy>=1.1.15
+psycopg2-binary>=2.7.4
+gevent>=1.2.2
+redis>=2.10.6
+fakeredis>=0.8.2
+six>=1.11.0
+pytz>=2017.2
+grpcio>=1.6.3
+grpcio-tools>=1.6.3
+mysqlclient>=1.3.12
+Flask>=0.12.2
+Flask-Cors>=3.0.3
+flask-restplus>=0.10.1

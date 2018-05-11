@@ -1,0 +1,9 @@
+# documentation
+recursive-include docs/_build/html *
+
+# misc
+include CHANGES.txt
+include LICENSE
+
+# templates
+recursive-include youtiao/templates *.tpl
