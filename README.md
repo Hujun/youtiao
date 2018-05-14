@@ -10,8 +10,8 @@ Youtiao is a project for Micro-Service scaffold generation and provides a set of
   * [Project Init](#project-init)
   * [Docker image build](#docker-image-build)
   * [gRPC protobuf file compile](#grpc-protobuf-file-compile)
-  * [Rancher deployment (CI/CD)](#rancher-deployment-(CI/CD))
-* [About "Youtiao"](#about-"youtiao")
+  * [Rancher deployment (CI/CD)](#rancher-deployment-CI-CD)
+* [About "Youtiao"](#about-youtiao)
 * [Support the project](#support-the-project)
 
 ### Prerequisites
