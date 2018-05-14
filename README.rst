@@ -168,7 +168,7 @@ lengthwise in two. Youtiao are normally eaten at breakfast as an
 accompaniment for rice congee, soy milk or regular milk blended with
 suger.
 
-.. figure:: https://en.wikipedia.org/wiki/File:Youtiao.jpg
+.. figure:: https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Youtiao.jpg/500px-Youtiao.jpg
    :alt: youtiao
 
    youtiao

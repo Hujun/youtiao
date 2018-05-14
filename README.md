@@ -10,8 +10,8 @@ Youtiao is a project for Micro-Service scaffold generation and provides a set of
   * [Project Init](#project-init)
   * [Docker image build](#docker-image-build)
   * [gRPC protobuf file compile](#grpc-protobuf-file-compile)
-  * [Rancher deployment (CI/CD)](#rancher-deployment-(CI/CD))
-* [About "Youtiao"](#about-"youtiao")
+  * [Rancher deployment (CI/CD)](#rancher-deployment-CI-CD)
+* [About "Youtiao"](#about-youtiao)
 * [Support the project](#support-the-project)
 
 ### Prerequisites
@@ -139,7 +139,7 @@ You can have more details about Rancher CI/CD in your [blog](https://github.com/
 
 ["Youtiao"](https://en.wikipedia.org/wiki/Youtiao) is a long golden-brown deepfried strip of dough eaten in China and (by a variety of other names) in other East and Southeast Asian cuisines. Conventionally, youtiao are lightly salted and made so they can be born lengthwise in two. Youtiao are normally eaten at breakfast as an accompaniment for rice congee, soy milk or regular milk blended with suger.
 
-![youtiao](https://en.wikipedia.org/wiki/File:Youtiao.jpg)
+![youtiao](https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Youtiao.jpg/500px-Youtiao.jpg)
 
 ### Support the project
 
