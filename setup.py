@@ -4,8 +4,9 @@ import io
 import os
 import sys
 from shutil import rmtree
-
 from setuptools import setup, find_packages, Command
+import subprocess
+from pathlib import Path
 
 
 __version__ = '{major_version}.{minor_version}.{patch_version}'.format(
@@ -17,37 +18,47 @@ pwd_path = os.path.abspath(os.path.dirname(__file__))
 with io.open(os.path.join(pwd_path, 'README.rst'), encoding='utf-8') as f:
     readme = '\n' + f.read()
 
-class UploadCommand(Command):
-    """Support setup.py upload."""
 
-    description = 'Build and publish the package.'
-    user_options = []
+class PackageCommand(Command):
+    """Support setup.py package"""
 
-    @staticmethod
-    def status(s):
-        """Prints things in bold."""
-        print('\033[1m{0}\033[0m'.format(s))
+    description = 'Build package.'
+    user_options = [
+        ('with-deps', None, 'package with all wheel packages of dependencies'),
+    ]
 
     def initialize_options(self):
-        pass
+        """Set default values for options"""
+        self.with_deps=False
 
     def finalize_options(self):
-        pass
+        """Post-process options"""
+        if self.with_deps:
+            self.with_deps=True
 
     def run(self):
-        try:
-            self.status('Removing previous builds...')
-            rmtree(os.path.join(pwd_path, 'dist'))
-        except OSError:
-            pass
+        """Run command"""
+        clear_files = [
+            os.path.join(pwd_path, 'build'),
+            os.path.join(pwd_path, 'dist'),
+            os.path.join(pwd_path, '*/*.egg-info'),
+            os.path.join(pwd_path, 'Youtiao.egg-info'),
+        ]
+        for cf in clear_files:
+            print('rm {}'.format(cf))
+            subprocess.run(['rm', '-rf', cf])
 
-        self.status('Building Source and Wheel (universal) distribution...')
-        os.system('{0} setup.py sdist bdist_wheel --universal'.format(sys.executable))
+        # make sure that wheel is installed
+        subprocess.run(['python', 'setup.py', 'bdist', 'bdist_wheel', '--universal'])
 
-        self.status('Uplading the package to PyPi vis Twine...')
-        os.system('twine upload dist/*')
+        if self.with_deps:
+            rqm_path = os.path.join(pwd_path, 'requirements.txt')
+            wheels_path = os.path.join(pwd_path, 'wheels')
+            subprocess.run(['rm', '-rf', wheels_path])
+            subprocess.run(['mkdir', '-p', wheels_path])
+            subprocess.run('pip wheel --wheel-dir={} -r {}'.format(wheels_path, rqm_path), shell=True)
 
-        sys.exit()
+        sys.exit(0)
 
 
 setup(
@@ -94,6 +105,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     cmdclass={
-        'upload': UploadCommand,
+        'package': PackageCommand,
     },
 )

@@ -98,8 +98,6 @@ init_error()
 SENTRY_CONFIG = APP_CONFIG.get('sentry')
 if SENTRY_CONFIG and SENTRY_CONFIG.pop('enabled', False):
     SENTRY_CONFIG['release'] = __version__
-    if os.getenv('SENTRY_DSN'):
-        SENTRY_CONFIG['dsn'] = os.getenv('SENTRY_DSN')
     if not SENTRY_CONFIG.get('dsn'):
         raise ValueError('Missing Sentry DSN')
     sentry_cli = SentryClient(**SENTRY_CONFIG)

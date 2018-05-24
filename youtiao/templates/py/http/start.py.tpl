@@ -6,7 +6,7 @@ from pathlib import Path
 base_path = Path(__file__).parent.resolve().joinpath('{{ app_name }}')
 sys.path.append(str(base_path))
 sys.path.append(os.path.dirname(base_path))
-sys.path.append(str(base_path.joinpath('proto')))
+# sys.path.append(str(base_path.joinpath('proto')))
 
 from gevent import monkey
 monkey.patch_all()

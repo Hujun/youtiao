@@ -354,6 +354,8 @@ def init_api():
             bp_prefix = '/' + '/'.join(prefix[::-1])
             try:
                 api_module = import_module(module_path)
+                if 'api' not in api_module.__dict__.keys():
+                    continue
                 bp = Blueprint(module_path, module_path)
                 api_module.api.set_url_prefix(bp_prefix)
                 api_module.api.init_app(bp, title=title)
