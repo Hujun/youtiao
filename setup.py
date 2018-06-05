@@ -12,7 +12,7 @@ from pathlib import Path
 __version__ = '{major_version}.{minor_version}.{patch_version}'.format(
     major_version=0,
     minor_version=0,
-    patch_version=1,
+    patch_version=2,
 )
 pwd_path = os.path.abspath(os.path.dirname(__file__))
 with io.open(os.path.join(pwd_path, 'README.rst'), encoding='utf-8') as f:
