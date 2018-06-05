@@ -341,13 +341,13 @@ def init_api():
                 title = '{} API'.format(APP_NAME)
             else:
                 prefix = [os.path.splitext(f)[0]]
-                sub_path = '.'.join(re.sub(API_DIR, '', dirname).split('/')[1:])
+                sub_path = '.'.join(re.sub(API_DIR, '', dirname).split(os.sep)[1:])
                 if sub_path:
                     module_path = 'api.{}.{}'.format(sub_path, os.path.splitext(f)[0])
                 else:
                     module_path = 'api.{}'.format(os.path.splitext(f)[0])
                 title = '{} {} API'.format(APP_NAME, os.path.splitext(f)[0].upper())
-            for d in dirname.split('/')[::-1]:
+            for d in os.path.split(dirname)[::-1]:
                 prefix.append(d)
                 if d == 'api':
                     break
