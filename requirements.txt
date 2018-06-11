@@ -11,8 +11,6 @@ docker-pycreds==0.2.2
 grpcio==1.10.0
 grpcio-tools==1.10.0
 idna==2.6
-ipython==6.4.0
-ipython-genutils==0.2.0
 jedi==0.11.1
 Jinja2==2.10
 MarkupSafe==1.0
