@@ -90,7 +90,7 @@ class MethodMixin(object):
     @classmethod
     def new(cls, **kwargs):
         obj = cls()
-        for k, v in kwargs.iteritems():
+        for k, v in kwargs.items():
             if k in obj.__table__.columns.keys() and v is not None:
                 setattr(obj, k, v)
         DBSession.add(obj)
