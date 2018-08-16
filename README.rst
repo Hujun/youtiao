@@ -73,22 +73,12 @@ Create a new project by command:
 
 ::
 
-    youtiao init --language=python [directory]
+    youtiao init --project_dir [directory]
 
 A dialog will be launched for service name and service mode
 confirmation. If everything goes well, a project skeleton will be
 generated. The command will not generate any file under given directory
 path if the process is abort or any exception is raised.
-
-Now available language and service templates:
-
-+------------------------+--------------------+
-| Programming Language   | Servcie Template   |
-+========================+====================+
-| Python                 | HTTP               |
-+------------------------+--------------------+
-| Python                 | gRPC               |
-+------------------------+--------------------+
 
 Docker image build
 ^^^^^^^^^^^^^^^^^^
