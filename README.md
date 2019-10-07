@@ -1,5 +1,7 @@
 ## Youtiao
 
+### This project is archived because [github templates repo](https://help.github.com/en/articles/creating-a-template-repository) seems a better solution for quick project setup.
+
 Youtiao is a project for Micro-Service scaffold generation and provides a set of related tools.
 
 ---
